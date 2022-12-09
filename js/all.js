@@ -19,12 +19,12 @@ function getProductList(){
     renderProductList();
   })
 }
-function combineProductHTMLItem(item){
+function combineProductItem(item){
   return `<li class="productCard">
         <h4 class="productType">新品</h4>
         <img
           src="${item.images}"
-          alt="">
+          alt="img">
         <a href="#" class="js-addCart"  id="addCardBtn" data-id="${item.id}">加入購物車</a>
         <h3>${item.title}</h3>
         <del class="originPrice">NT$${toThousands(item.origin_price)}</del>
@@ -34,7 +34,8 @@ function combineProductHTMLItem(item){
 function renderProductList(){
   let str = "";
   productData.forEach(function (item) {
-    str += combineProductHTMLItem(item);
+    //combineProductHTMLItem
+    str += combineProductItem(item);
   })
   productList.innerHTML = str;
 }
@@ -48,7 +49,7 @@ productSelect.addEventListener('change',function(e){
   let str = "";
   productData.forEach(function(item){
     if(item.category ==category){
-      str += combineProductHTMLItem(item)
+      str += combineProductItem(item)
     }
   })
   productList.innerHTML = str;
