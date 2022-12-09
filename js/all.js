@@ -113,7 +113,7 @@ cartList.addEventListener('click',function(e){
   e.preventDefault();
   const cartId = e.target.getAttribute("data-id");
   if(cartId==null){
-    alert("你點到其它東西了窩~")
+    alert("點到其它東西了！")
     return;
   }
   console.log(cartId);
